@@ -1,13 +1,18 @@
 pipeline{
 	agent any
 	parameters { 
-		string(name: 'Tag', defaultValue: '', description: 'please pass the tag ')
+		string(name: 'tag', defaultValue: '', description: 'please pass the tag ')
 		booleanParam(name: 'test', defaultValue: true, description: ' enable test cases')
 	}
+	environment { 
+        	github_org = "yashveer007"
+		github_repo = "MavenProjectEx"
+    	}
 	stages{
 		stage("Setup"){
 			steps{
-				echo "this is do setup ${params.Tag}"
+				echo "this is do setup ${params.tag}"
+				echo "$github_org"
 			}
 		}
 		stage("versioning"){
