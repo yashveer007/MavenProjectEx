@@ -7,7 +7,7 @@ pipeline{
 	stages{
 		stage("Setup"){
 			steps{
-				echo "this is do setup ${params.tag}"
+				echo "this is do setup ${params.Tag}"
 			}
 		}
 		stage("versioning"){
