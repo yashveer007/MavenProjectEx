@@ -14,6 +14,7 @@ pipeline{
 				echo "this is do setup ${params.tag}"
 				echo "github_org = $github_org"
 				echo "github_repo = $github_repo"
+				sh "mvn compile"
 			}
 		}
 		stage("versioning"){
