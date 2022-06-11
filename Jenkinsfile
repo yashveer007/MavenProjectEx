@@ -8,6 +8,9 @@ pipeline{
         	github_org = "yashveer007"
 		github_repo = "MavenProjectEx"
     	}
+	tools {
+        	maven 'apache-maven-3.6.1' 
+    	}
 	stages{
 		stage("Setup"){
 			steps{
