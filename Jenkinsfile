@@ -8,16 +8,13 @@ pipeline{
         	github_org = "yashveer007"
 		github_repo = "MavenProjectEx"
     	}
-	tools {
-        	MVN_HOME 'D:\software\java software\apache-maven-3.6.1-20200226T043157Z-001\apache-maven-3.6.1' 
-    	}
+	
 	stages{
 		stage("Setup"){
 			steps{
 				echo "this is do setup ${params.tag}"
 				echo "github_org = $github_org"
 				echo "github_repo = $github_repo"
-				sh "mvn compile"
 			}
 		}
 		stage("versioning"){
