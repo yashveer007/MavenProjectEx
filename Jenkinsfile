@@ -23,7 +23,7 @@ pipeline{
 		}
 		stage("test"){
 			when{
-				condition{
+				expression{
 					params.test
 				}
 			}
@@ -36,8 +36,10 @@ pipeline{
 				echo "this is do package ${params.tag}"
 			}
 		}
-		always{
+	}
+	post { 
+        	always{
 			echo "Work Completed"
 		}
-	}
+   	}
 }
