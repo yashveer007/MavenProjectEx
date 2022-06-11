@@ -12,7 +12,8 @@ pipeline{
 		stage("Setup"){
 			steps{
 				echo "this is do setup ${params.tag}"
-				echo "$github_org"
+				echo "github_org = $github_org"
+				echo "github_repo = $github_repo"
 			}
 		}
 		stage("versioning"){
@@ -21,6 +22,11 @@ pipeline{
 			}
 		}
 		stage("test"){
+			when{
+				condition{
+					params.test
+				}
+			}
 			steps{
 				echo "this is do test ${params.tag}"
 			}
@@ -29,6 +35,9 @@ pipeline{
 			steps{
 				echo "this is do package ${params.tag}"
 			}
+		}
+		always{
+			echo "Work Completed"
 		}
 	}
 }
