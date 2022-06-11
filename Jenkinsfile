@@ -9,7 +9,7 @@ pipeline{
 		github_repo = "MavenProjectEx"
     	}
 	tools {
-        	MVN_HOME 'apache-maven-3.6.1' 
+        	MVN_HOME 'D:\software\java software\apache-maven-3.6.1-20200226T043157Z-001\apache-maven-3.6.1' 
     	}
 	stages{
 		stage("Setup"){
